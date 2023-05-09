@@ -30,7 +30,7 @@ class TextUtils extends StatelessWidget {
       style: GoogleFonts.montserrat(
         textStyle: TextStyle(
             decoration: underline,
-            fontSize: fontSize ?? 18,
+            fontSize: fontSize ?? MediaQuery.of(context).size.aspectRatio*35,
             fontWeight: fontWeight ?? FontWeight.normal,
             color: color ?? mainColor,
             overflow: TextOverflow.ellipsis),

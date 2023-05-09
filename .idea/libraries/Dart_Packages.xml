@@ -205,6 +205,13 @@
             </list>
           </value>
         </entry>
+        <entry key="logging">
+          <value>
+            <list>
+              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/logging-1.1.1/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="matcher">
           <value>
             <list>
@@ -345,6 +352,20 @@
             </list>
           </value>
         </entry>
+        <entry key="socket_io_client">
+          <value>
+            <list>
+              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/socket_io_client-2.0.2/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="socket_io_common">
+          <value>
+            <list>
+              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/socket_io_common-2.0.3/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="source_span">
           <value>
             <list>
@@ -465,6 +486,7 @@
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/image-4.0.15/lib" />
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/introduction_screen-3.1.4/lib" />
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.4/lib" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/logging-1.1.1/lib" />
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.12/lib" />
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/material_color_utilities-0.1.5/lib" />
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.8.0/lib" />
@@ -484,6 +506,8 @@
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/process-4.2.4/lib" />
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/provider-6.0.5/lib" />
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/smart_auth-1.0.8/lib" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/socket_io_client-2.0.2/lib" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/socket_io_common-2.0.3/lib" />
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.9.0/lib" />
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0/lib" />
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0/lib" />

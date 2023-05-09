@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smartfarm/view/layout/auth/pin_widget.dart';
 
-
 import '../../layout/text_utiles.dart';
 
 class PinScreen extends StatelessWidget {
@@ -13,7 +12,6 @@ class PinScreen extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
           child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -28,19 +26,37 @@ class PinScreen extends StatelessWidget {
                       size: 25,
                     ))),
             SizedBox(
-              height: mqh * 0.18,
+              height: mqh * 0.1,
             ),
-             TextUtils(
-                text: "Verify Code", fontSize: 25, fontWeight: FontWeight.w500),
+            Container(
+              height: mqh * 0.2,
+              alignment: Alignment.center,
+              child: Image.asset('images/auth/verify.jpg'),
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: TextUtils(
+                  text: "Verify Code",
+                  fontSize: 25,
+                  fontWeight: FontWeight.w500),
+            ),
             SizedBox(
               height: mqh * 0.01,
             ),
-             TextUtils(
-                text: "Please Enter Your Code", fontSize: 18, color: Colors.grey),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: TextUtils(
+                  text: "Enter  Code and New Password",
+                  fontSize: 17,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.grey),
+            ),
             SizedBox(
               height: mqh * 0.05,
             ),
-            const PinputExample(),
+            Container(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: PinputExample()),
           ],
         ),
       )),
