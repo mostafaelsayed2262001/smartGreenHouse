@@ -32,7 +32,7 @@ class AuthCubit extends Cubit<AuthState> {
     if (token != 'false') {
       await showData();
       Navigator.of(context).push(
-        MaterialPageRoute(builder: (_) => const HomeScreen()),
+        MaterialPageRoute(builder: (_) =>  HomeScreen()),
       );
       emit(AuthLogin());
     } else {

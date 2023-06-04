@@ -1,3 +1,4 @@
+import 'package:smartfarm/view_model/cubit/realtime_socket_cubit/soket_cubit.dart';
 import 'package:socket_io_client/socket_io_client.dart' as IO;
 
 class SensorRealTime {
@@ -5,20 +6,22 @@ class SensorRealTime {
   'autoConnect': false,
   'transports': ['websocket'],
 });
-   sokectConnect(String nameSensor) {
+
+   socketConnect(String nameSensor) {
 
     socket.connect();
     socket.onConnect((_) {
       print('Connection established');
     });
     socket.on('$nameSensor', (data) {
+      print("Soil Value: ${data["soilValue"]}");
 
-      var x = data["soilValue"];
-      print("Soil Value: $x");
-      return x;
+
+      print("Soil Value: ${data["soilValue"]}");
+      return data;
     });
   }
   socketDisconnect(){
-    socket.onDisconnect((_) => print('Connection Disconnection'));
+    socket.disconnect();
   }
 }

@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(providers: [
       BlocProvider(create: ((context) =>AuthCubit())),
-      BlocProvider(create: ((context) =>SocketCubit())),
+      // BlocProvider(create: ((context) =>SocketCubit())),
     ], child: MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Smart Farm ',

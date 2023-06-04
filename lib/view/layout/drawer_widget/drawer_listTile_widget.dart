@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:smartfarm/services/network/sensor_io.dart';
 import 'package:smartfarm/view/layout/drawer_widget/drawer_widget.dart';
 import 'package:smartfarm/view/layout/text_utiles.dart';
@@ -10,7 +11,10 @@ import 'package:smartfarm/view/screen/category_home/sensor_screen.dart';
 import 'package:smartfarm/view/screen/category_home/setting_screen.dart';
 import 'package:smartfarm/view_model/cubit/auth_cubit/auth_cubit.dart';
 import 'package:smartfarm/view_model/cubit/realtime_socket_cubit/soket_cubit.dart';
+import 'package:smartfarm/view_model/cubit/sensor_controller.dart';
 Widget drawerListTile(context) {
+  final sensorController = Get.find<SensorController>();
+
   return Drawer(
       child: ListView(
     children: [
@@ -122,7 +126,7 @@ Widget drawerListTile(context) {
       ),
       listTileDrawer(context, title: 'Sensor', onTap: () {
             Navigator.pop(context);
-
+            sensorController.sensors();
             Navigator.of(context).push(MaterialPageRoute(
               builder: (context) => SensorScreen(),
 
