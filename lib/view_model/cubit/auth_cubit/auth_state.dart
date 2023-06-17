@@ -9,3 +9,5 @@ class AuthLogin extends AuthState {}
 class AuthError extends AuthState {}
 class AuthLoader extends AuthState {}
 class AuthDataShowed extends AuthState {}
+class MachineTemperature extends AuthState {}
+class MachineGarage extends AuthState {}

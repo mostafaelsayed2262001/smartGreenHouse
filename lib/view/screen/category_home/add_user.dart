@@ -165,6 +165,7 @@ class AddWorkerScreen extends StatelessWidget {
                     ),
                     onPressed: () async{
                       if(keyWorker.currentState!.validate()){
+
                        await AuthCubit.get(context).AddWorker(context);
                       }
 

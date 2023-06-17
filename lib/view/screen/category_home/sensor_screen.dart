@@ -40,12 +40,29 @@ class SensorScreen extends StatelessWidget {
               height: MediaQuery.of(context).size.height * 0.15,
             ),
           ),
-          rowCustomWidget(name: 'Temperature', num: '50 C'),
+          Obx(() => rowCustomWidget(
+              name: 'Temperature',
+              num: "${controller.fanValue.isEmpty ? false :
+              controller.tempValue[0]
+              }")),
+          Divider(
+            thickness: 1,
+            color: Colors.grey,
+          ),Obx(() => rowCustomWidget(
+              name: 'Humidity',
+              num: "${controller.fanValue.isEmpty ? false :
+              controller.humidityValue[0]
+              }")),
           Divider(
             thickness: 1,
             color: Colors.grey,
           ),
-          rowCustomWidget(name: 'Fan Status', num: '50 C'),
+
+          Obx(() => rowCustomWidget(
+              name: 'Fan Status',
+              num: "${controller.fanValue.isEmpty ? false :
+              controller.fanValue[0] == 1 ? 'on' : "off"
+              }")),
           Divider(
             thickness: 1,
             color: Colors.grey,
@@ -67,7 +84,14 @@ class SensorScreen extends StatelessWidget {
             thickness: 1,
             color: Colors.grey,
           ),
-          rowCustomWidget(name: 'Light', num: 'on'),
+          Obx(() => rowCustomWidget(
+              name: 'Light',
+              num:
+              "${controller.lDRValue.value.isEmpty ? false :
+                  controller.lDRValue[0]==1?"on":"off"
+                }")),
+
+
         ]),
       ),
     );

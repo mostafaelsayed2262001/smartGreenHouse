@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-import 'package:smartfarm/services/network/sensor_io.dart';
+
 import 'package:smartfarm/view/layout/drawer_widget/drawer_widget.dart';
 import 'package:smartfarm/view/layout/text_utiles.dart';
 import 'package:smartfarm/view/screen/category_home/add_user.dart';
@@ -126,17 +126,21 @@ Widget drawerListTile(context) {
       ),
       listTileDrawer(context, title: 'Sensor', onTap: () {
             Navigator.pop(context);
-            sensorController.sensors();
+            sensorController.lDRSensors();
+            sensorController.fanSensors();
+            sensorController.pumpSensors();
+
             Navigator.of(context).push(MaterialPageRoute(
               builder: (context) => SensorScreen(),
 
             ));
           }),
-      listTileDrawer(context, title: 'Mototrs', onTap: () {
+      AuthCubit.get(context).userData["role"]=="admin" ?
+      listTileDrawer(context, title: 'Motors', onTap: () {
         Navigator.pop(context);
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (_) => MotorsScreen()));
-      }),
+      }):SizedBox(),
       listTileDrawer(context, title: 'Edit Profile', onTap: () {
         print('Edit Profile');
 
@@ -146,7 +150,8 @@ Widget drawerListTile(context) {
           MaterialPageRoute(builder: (_) => EditProfileScreen()),
         );
       }),
-      listTileDrawer(context, title: 'Add Worker', onTap: () {
+
+      AuthCubit.get(context).userData["role"]=="admin" ?listTileDrawer(context, title: 'Add Worker', onTap: () {
         print('Add Worker');
         Navigator.pop(context);
         AuthCubit.get(context).ctrlPassword.text = '';
@@ -154,7 +159,7 @@ Widget drawerListTile(context) {
         AuthCubit.get(context).ctrlName.text = '';
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (_) => AddWorkerScreen()));
-      }),
+      }):SizedBox(),
       listTileDrawer(context, title: 'Setting', onTap: () {
         print('Setting');
         Navigator.pop(context);

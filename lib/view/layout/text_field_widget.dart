@@ -24,6 +24,9 @@ class TextFieldWidgt extends StatelessWidget {
       keyboardType: keyboardType,
       controller: ctrl,
       decoration: InputDecoration(
+        fillColor: mainColor,
+        focusColor: mainColor,
+
         suffixIcon: suffix,
         prefixIcon: Icon(iconData),
         hintStyle: GoogleFonts.roboto(

@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:smartfarm/observer.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(providers: [
       BlocProvider(create: ((context) =>AuthCubit())),
       // BlocProvider(create: ((context) =>SocketCubit())),
-    ], child: MaterialApp(
+    ], child: GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Smart Farm ',
       theme: ThemesApp.light,

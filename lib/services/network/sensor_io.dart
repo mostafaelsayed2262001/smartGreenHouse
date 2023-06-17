@@ -2,7 +2,7 @@ import 'package:smartfarm/view_model/cubit/realtime_socket_cubit/soket_cubit.dar
 import 'package:socket_io_client/socket_io_client.dart' as IO;
 
 class SensorRealTime {
-  final socket = IO.io('http://192.168.58.198:5000/', <String, dynamic>{
+  final socket = IO.io('http://192.168.146.198:5000/', <String, dynamic>{
   'autoConnect': false,
   'transports': ['websocket'],
 });

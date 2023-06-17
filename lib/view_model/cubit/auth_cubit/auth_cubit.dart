@@ -28,11 +28,11 @@ class AuthCubit extends Cubit<AuthState> {
     token = await _authenticationServices.postLogin(
         user: ctrlEmail.text.toString(),
         password: ctrlPassword.text.toString());
-
+    print(token);
     if (token != 'false') {
       await showData();
       Navigator.of(context).push(
-        MaterialPageRoute(builder: (_) =>  HomeScreen()),
+        MaterialPageRoute(builder: (_) => HomeScreen()),
       );
       emit(AuthLogin());
     } else {
@@ -44,7 +44,7 @@ class AuthCubit extends Cubit<AuthState> {
         ),
         backgroundColor: (Colors.grey),
       ));
-      emit(AuthInitial());
+      emit(AuthError());
     }
   }
 
@@ -54,6 +54,35 @@ class AuthCubit extends Cubit<AuthState> {
     userData = await _authenticationServices.showData(token);
     ctrlName.text = userData['data']['fullName'];
     emit(AuthDataShowed());
+  }
+  tempMachine(context,index) async {
+    await _authenticationServices.showData(token);
+     await _authenticationServices.tempMachine(index);
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: TextUtils(text: 'Done ✔', fontWeight: FontWeight.bold),
+          content: TextUtils(
+              text: 'Your Data is Updated 😊.',
+              fontSize: MediaQuery.of(context).size.aspectRatio * 35,
+              color: Colors.black),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => HomeScreen()));
+              },
+              child: TextUtils(
+                  text: 'OK',
+                  color: Colors.black,
+                  fontWeight: FontWeight.w500),
+            ),
+          ],
+        );
+      },
+    );
+    emit(MachineTemperature());
   }
 
   logOut(context) async {
@@ -118,15 +147,18 @@ class AuthCubit extends Cubit<AuthState> {
 
   AddWorker(context) async {
     var status;
+
     try {
       status = await _authenticationServices.addWorker(
           email: ctrlEmail.text.toString().trim(),
           fullName: ctrlName.text.toString().trim(),
           password: ctrlPassword.text.toString().trim(),
           token: token);
+      print(status);
     } catch (e) {
       print('$e');
     }
+
     if (status == 200) {
       await showData();
       showDialog(
@@ -155,9 +187,14 @@ class AuthCubit extends Cubit<AuthState> {
       );
     }
   }
+  garageRequest(context)async{
+    await _authenticationServices.garageMachine(token);
+    emit(MachineGarage());
+  }
 
   isVisiable() {
     visibilty = !visibilty;
     emit(AuthVisiable());
   }
+
 }
