@@ -21,7 +21,7 @@ class SensorController extends GetxController {
   RxList fanValue = [].obs;
   RxList tempValue = [].obs;
   RxList humidityValue = [].obs;
-  final socket = IO.io('http://192.168.146.198:5000/', <String, dynamic>{
+  final socket = IO.io('http://192.168.75.198:5000/', <String, dynamic>{
     'autoConnect': false,
     'transports': ['websocket'],
   });

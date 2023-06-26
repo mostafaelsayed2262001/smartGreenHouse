@@ -3,7 +3,7 @@ String validationEmail =
 
 String validationName = r'^[a-z A-Z]+$';
 
-String baseUrl = 'http://192.168.146.198:5000/';
+String baseUrl = 'http://192.168.75.198:5000/';
 String arabic = 'Arabic 🇸🇦';
 String english = 'English 🏴󠁧󠁢󠁥󠁮󠁧󠁿';
 String france = 'France 🇫🇷';
